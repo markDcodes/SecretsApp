@@ -22,7 +22,7 @@ const findOrCreate = require('mongoose-findorcreate');
 // const bcrypt = require('bcrypt');
 // const saltRounds = 10;
 
-const port = 3000;
+//const port = 3000;
 
 const app = express();
 
@@ -197,6 +197,12 @@ app.post('/login', passport.authenticate('local',
   failureRedirect: '/login'
 }));
 
+//Port setup Per Heroku
+let port = process.env.PORT;
+//If port empty, use localhost
+if (port == null || port =="") {
+  port = 3000;
+}
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);

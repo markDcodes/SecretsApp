@@ -116,3 +116,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# From Heroku
+/node_modules
+npm-debug.log
+.DS_Store
+/*.env
