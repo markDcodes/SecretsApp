@@ -4,6 +4,7 @@
 //Backend is Express, Database is MongoDB
 //Users may use Google to login or register directly
 //Authentication uses Passport.js middleware 1)google-oauth20 2)passport-local 
+//
 
 
 require('dotenv').config(); //Environment Variables
