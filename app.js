@@ -197,13 +197,12 @@ app.post('/login', passport.authenticate('local',
   failureRedirect: '/login'
 }));
 
-//Port setup Per Heroku
+//Port setup per Heroku
 let port = process.env.PORT;
-//If port empty, use localhost
-if (port == null || port =="") {
+if (port == null || port == "") {
   port = 3000;
 }
-
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`);
+ 
+app.listen(port, function() {
+  console.log("Server started succesfully");
 });
