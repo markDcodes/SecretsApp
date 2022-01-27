@@ -44,7 +44,7 @@ app.use(passport.session());
 
 
 //Connect & Setup MongoDB________________________
-mongoose.connect("mongodb+srv://admin-mark:WebDevTesting123@cluster0.jnhig.mongodb.net/secretsDB", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema ({
@@ -82,7 +82,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/secrets", //aka redirect URI in google dev console project
+    callbackURL: "https://immense-falls-92034.herokuapp.com/auth/google/secrets", //aka redirect URI in google dev console project
     userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo' //fix to remove Google+ query github #51
   },
   function(accessToken, refreshToken, profile, cb) {
