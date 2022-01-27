@@ -44,7 +44,7 @@ app.use(passport.session());
 
 
 //Connect & Setup MongoDB________________________
-mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://admin-mark:WebDevTesting123@cluster0.jnhig.mongodb.net/secretsDB", {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema ({
