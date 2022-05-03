@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Config package - express-session
 app.use(session({
-  secret: 'Evergreen Pine Cone Fir Tree Conifer',
+  secret: EXPRESSKEY,
   resave: false,
   saveUninitialized: false,
 }));
